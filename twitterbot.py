@@ -2,14 +2,16 @@ import tweepy
 import os
 import requests
 
+secrets = os.environ["client_secret]
+
 client = tweepy.Client(
-    consumer_key=api_key,
-    consumer_secret=api_secret,
-    access_token=access_token,
-    access_token_secret=access_token_secret
+    consumer_key=secrets.API_KEY,
+    consumer_secret=secrets.API_SECRET,
+    access_token=secrets.ACCESS_TOKEN,
+    access_token_secret=secrets.ACCESS_TOKEN_SECRET
 )
 
-auth = tweepy.OAuth1UserHandler(api_key, api_secret,access_token, access_token_secret)
+auth = tweepy.OAuth1UserHandler(secrets.API_KEY, secrets.API_SECRET,secrets.ACCESS_TOKEN, secrets.ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth)
 
 # Initialize API clients
