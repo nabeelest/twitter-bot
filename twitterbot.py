@@ -2,14 +2,6 @@ import tweepy
 import os
 import requests
 
-client_id = ""
-client_secret = ""
-api_key = ""
-api_secret = ""
-access_token = ""
-access_token_secret = ""
-bearer_token = r""
-
 client = tweepy.Client(
     consumer_key=api_key,
     consumer_secret=api_secret,
