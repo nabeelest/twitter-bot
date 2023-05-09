@@ -2,7 +2,7 @@ import tweepy
 import os
 import requests
 
-secrets = os.environ["client_secret]
+secrets = os.environ["client_secret"]
 
 client = tweepy.Client(
     consumer_key=secrets.API_KEY,
