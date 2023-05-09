@@ -15,7 +15,7 @@ auth = tweepy.OAuth1UserHandler(secrets.API_KEY, secrets.API_SECRET,secrets.ACCE
 api = tweepy.API(auth)
 
 # Initialize API clients
-unsplash_access_key = 'Hato407HTCfPeG9y5MRBaNenaDqckkbC_vRUCLTYwBk'
+unsplash_access_key = secrets.UNSPLASH_ACCESS_KEY
 
 # Get random photo from Unsplash
 unsplash_url = 'https://api.unsplash.com/photos/random?query=aesthetic'
