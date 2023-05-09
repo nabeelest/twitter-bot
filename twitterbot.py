@@ -2,13 +2,13 @@ import tweepy
 import os
 import requests
 
-client_id = "VGN5WnRmUjZaREVwU3QzVUZ2VWU6MTpjaQ"
-client_secret = "MNq0Qa8pe6WfmMGQaU_XqAfRz6Ew9nMrsFWfeLqWl60cIMixnl"
+client_id = ""
+client_secret = ""
 api_key = "Kbac48DDrpOyD02en72ELZL7z"
-api_secret = "Tnu10IIzpGPSJ7PKUmY43sRBzbC9e1D3j0QMh4fZen0SqYv3im"
-access_token = "1624851913345994753-96411rQhCbtICx3U0GFrsPaV2Da7BY"
-access_token_secret = "aE2pW1TEJIjRXU2marMx1f2kn8PAFRmLqCz6qxvh89zoi"
-bearer_token = r"AAAAAAAAAAAAAAAAAAAAAD1fnAEAAAAAe3GNoV5R9IxdAvVz%2Fszjtetu5bU%3DWAPm72xaY8r5Cac6IWGECrVhMCPkeYMQ7AqDS0IozHkQtdQCSz"
+api_secret = ""
+access_token = ""
+access_token_secret = ""
+bearer_token = r""
 
 client = tweepy.Client(
     consumer_key=api_key,
