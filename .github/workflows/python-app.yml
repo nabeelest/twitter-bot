@@ -2,7 +2,7 @@ name: run twitterbot.py
 
 on:
   schedule:
-    - cron: '*/30 * * * *' # Every 30 minutes 
+    - cron: '* * * * *' # Every 30 minutes 
 
 jobs:
   build:
