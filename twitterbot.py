@@ -4,7 +4,7 @@ import requests
 
 client_id = ""
 client_secret = ""
-api_key = "Kbac48DDrpOyD02en72ELZL7z"
+api_key = ""
 api_secret = ""
 access_token = ""
 access_token_secret = ""
