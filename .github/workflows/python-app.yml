@@ -28,4 +28,4 @@ jobs:
           access_token_secret: ${{secrets.ACCESS_TOKEN_SECRET}}
           bearer_token: ${{secrets.BEARER_TOKEN}}
           unsplash_access_key: ${{secrets.UNSPLASH_ACCESS_KEY}}
-        run: python main.py
+        run: python twitterbot.py
