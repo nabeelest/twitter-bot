@@ -2,8 +2,6 @@ import tweepy
 import os
 import requests
 
-client_id = os.environ["client_id"]
-client_secret = os.environ["client_secret"]
 api_key = os.environ["api_key"]
 api_secret = os.environ["api_secret"]
 access_token = os.environ["access_token"]
