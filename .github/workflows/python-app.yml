@@ -22,12 +22,12 @@ jobs:
           
       - name: execute py script # run main.py
         env:
-          client_id: ${{client_secret.CLIENT_ID}}
-          client_secret: ${{client_secret.CLIENT_SECRET}}
-          api_key: ${{client_secret.API_KEY}}
-          api_secret: ${{client_secret.API_SECRET}}
-          access_token: ${{client_secret.ACCESS_TOKEN}
-          access_token_secret: ${{client_secret.ACCESS_TOKEN_SECRET}}
-          bearer_token: ${{client_secret.BEARER_TOKEN}}
-          unsplash_access_key: ${{client_secret.UNSPLASH_ACCESS_KEY}}
+          client_id: ${{CLIENT_ID}}
+          client_secret: ${{CLIENT_SECRET}}
+          api_key: ${{API_KEY}}
+          api_secret: ${{API_SECRET}}
+          access_token: ${{ACCESS_TOKEN}
+          access_token_secret: ${{ACCESS_TOKEN_SECRET}}
+          bearer_token: ${{BEARER_TOKEN}}
+          unsplash_access_key: ${{UNSPLASH_ACCESS_KEY}}
         run: python main.py
