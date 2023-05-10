@@ -30,18 +30,18 @@ response.raise_for_status()
 unsplash_data = response.json()
 unsplash_image_url = unsplash_data['urls']['regular']
 
-# Download image from Unsplash
-image_response = requests.get(unsplash_image_url)
-with open('unsplash_image.jpg', 'wb') as f:
-    f.write(image_response.content)
+try:
+    # Download image from Unsplash
+    image_response = requests.get(unsplash_image_url)
+    with open('unsplash_image.jpg', 'wb') as f:
+        f.write(image_response.content)
+    # Upload media file
+    media = api.media_upload('unsplash_image.jpg')
 
-# Upload media file
-media = api.media_upload('unsplash_image.jpg')
-
-# Create tweet with media
-tweet = client.create_tweet(
-    media_ids = [media.media_id]
-)
-
-
-os.remove('unsplash_image.jpg')
+    # Create tweet with media
+    tweet = client.create_tweet(
+        media_ids = [media.media_id]
+    )
+    os.remove('unsplash_image.jpg')
+except:
+  print("An exception occurred in unsplash file")
