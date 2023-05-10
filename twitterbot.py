@@ -2,20 +2,26 @@ import tweepy
 import os
 import requests
 
-secrets = os.environ["client_secret"]
+client_id = os.environ["client_id"]
+client_secret = os.environ["client_secret"]
+api_key = os.environ["api_key"]
+api_secret = os.environ["api_secret"]
+access_token = os.environ["access_token"]
+access_token_secret = os.environ["access_token_secret"]
+bearer_token = os.environ["bearer_token"]
 
 client = tweepy.Client(
-    consumer_key=secrets.API_KEY,
-    consumer_secret=secrets.API_SECRET,
-    access_token=secrets.ACCESS_TOKEN,
-    access_token_secret=secrets.ACCESS_TOKEN_SECRET
+    consumer_key=api_key,
+    consumer_secret=api_secret,
+    access_token=access_token,
+    access_token_secret=access_token_secret
 )
 
-auth = tweepy.OAuth1UserHandler(secrets.API_KEY, secrets.API_SECRET,secrets.ACCESS_TOKEN, secrets.ACCESS_TOKEN_SECRET)
+auth = tweepy.OAuth1UserHandler(api_key, api_secret,access_token, access_token_secret)
 api = tweepy.API(auth)
 
 # Initialize API clients
-unsplash_access_key = secrets.UNSPLASH_ACCESS_KEY
+unsplash_access_key = os.environ["unsplash_access_key"]
 
 # Get random photo from Unsplash
 unsplash_url = 'https://api.unsplash.com/photos/random?query=aesthetic'
