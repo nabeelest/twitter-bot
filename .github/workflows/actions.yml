@@ -1,0 +1,33 @@
+name: run twitterbot.py
+
+
+on:
+  schedule:
+    - cron: '* * * * *' # Every 30 Minutes
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11' # install the python version needed
+          
+      - name: install python packages
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          
+      - name: execute py script # run main.py
+        env:
+          client_id: ${{client_secret.CLIENT_ID}}
+          client_secret: ${{client_secret.CLIENT_SECRET}}
+          api_key: ${{client_secret.API_KEY}}
+          api_secret: ${{client_secret.API_SECRET}}
+          access_token: ${{client_secret.ACCESS_TOKEN}
+          access_token_secret: ${{client_secret.ACCESS_TOKEN_SECRET}}
+          bearer_token: ${{client_secret.BEARER_TOKEN}}
+          unsplash_access_key: ${{client_secret.UNSPLASH_ACCESS_KEY}}
+        run: python main.py
