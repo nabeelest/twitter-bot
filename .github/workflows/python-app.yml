@@ -24,7 +24,7 @@ jobs:
         env:
           api_key: ${{secrets.API_KEY}}
           api_secret: ${{secrets.API_SECRET}}
-          access_token: ${{secrets.ACCESS_TOKEN}
+          access_token: ${{secrets.ACCESS_TOKEN}}
           access_token_secret: ${{secrets.ACCESS_TOKEN_SECRET}}
           bearer_token: ${{secrets.BEARER_TOKEN}}
           unsplash_access_key: ${{secrets.UNSPLASH_ACCESS_KEY}}
