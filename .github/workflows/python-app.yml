@@ -22,10 +22,10 @@ jobs:
           
       - name: execute py script # run main.py
         env:
-          api_key: ${{API_KEY}}
-          api_secret: ${{API_SECRET}}
-          access_token: ${{ACCESS_TOKEN}
-          access_token_secret: ${{ACCESS_TOKEN_SECRET}}
-          bearer_token: ${{BEARER_TOKEN}}
-          unsplash_access_key: ${{UNSPLASH_ACCESS_KEY}}
+          api_key: ${{secrets.API_KEY}}
+          api_secret: ${{secrets.API_SECRET}}
+          access_token: ${{secrets.ACCESS_TOKEN}
+          access_token_secret: ${{secrets.ACCESS_TOKEN_SECRET}}
+          bearer_token: ${{secrets.BEARER_TOKEN}}
+          unsplash_access_key: ${{secrets.UNSPLASH_ACCESS_KEY}}
         run: python main.py
