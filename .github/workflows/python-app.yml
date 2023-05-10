@@ -1,6 +1,10 @@
 name: run twitterbot.py
 
 
+on:
+  schedule:
+    - cron: '*/30 * * * *' # Every 30 Minutes
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,4 +29,5 @@ jobs:
           access_token: ${{client_secret.ACCESS_TOKEN}
           access_token_secret: ${{client_secret.ACCESS_TOKEN_SECRET}}
           bearer_token: ${{client_secret.BEARER_TOKEN}}
+          unsplash_access_key: ${{client_secret.UNSPLASH_ACCESS_KEY}}
         run: python main.py
