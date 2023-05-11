@@ -25,6 +25,7 @@ jobs:
           
       - name: execute py script # run twitterbot.py
         env:
+          quote_key: ${{secrets.QUOTE_KEY}}
           api_key: ${{secrets.API_KEY}}
           api_secret: ${{secrets.API_SECRET}}
           access_token: ${{secrets.ACCESS_TOKEN}}
