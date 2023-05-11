@@ -1,6 +1,7 @@
 import tweepy
 import os
 import requests
+import random
 
 api_key = os.environ["api_key"]
 api_secret = os.environ["api_secret"]
@@ -21,9 +22,14 @@ client = tweepy.Client(
 auth = tweepy.OAuth1UserHandler(api_key, api_secret,access_token, access_token_secret)
 api = tweepy.API(auth)
 
+# Query Selector
+my_list = ['aestheic','travel','greener-cities','people','tumblr','wallpapers','health','girl','arts-culture','beautiful','spirituality','current-events','abstract','wallart','painting','poetry','3d-renders','street-photography','textures-patterns','textures-patterns','fashion-beauty','qoutes','experimental','art','photography','gore','sweet','architecture-interior','lines','bad','good','horny','tumblr','random','boobs']
+random_item = random.choice(my_list)
+print(random_item)
+
 
 # Get random photo from Unsplash
-unsplash_url = 'https://api.unsplash.com/photos/random?query=aesthetic'
+unsplash_url = 'https://api.unsplash.com/photos/random?query='+ random_item + "'"
 unsplash_headers = {'Authorization': f'Client-ID {unsplash_access_key}'}
 response = requests.get(unsplash_url, headers=unsplash_headers)
 response.raise_for_status()
