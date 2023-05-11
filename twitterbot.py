@@ -38,10 +38,10 @@ response.raise_for_status()
 unsplash_data = response.json()
 unsplash_image_url = unsplash_data['urls']['regular']
 
-    # Download image from Unsplash
-    image_response = requests.get(unsplash_image_url)
-    with open('unsplash_image.jpg', 'wb') as f:
-        f.write(image_response.content)
+# Download image from Unsplash
+image_response = requests.get(unsplash_image_url)
+with open('unsplash_image.jpg', 'wb') as f:
+    f.write(image_response.content)
         
         
 ### Quote Generator
