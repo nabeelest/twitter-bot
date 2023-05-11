@@ -29,7 +29,7 @@ print(random_item)
 
 
 # Get random photo from Unsplash
-unsplash_url = 'https://api.unsplash.com/photos/random?query='+ random_item + "'"
+unsplash_url = 'https://api.unsplash.com/photos/random?query='+ random_item
 unsplash_headers = {'Authorization': f'Client-ID {unsplash_access_key}'}
 response = requests.get(unsplash_url, headers=unsplash_headers)
 response.raise_for_status()
