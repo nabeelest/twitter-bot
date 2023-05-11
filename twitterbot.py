@@ -3,11 +3,13 @@ import os
 import requests
 import random
 
+quote_key = os.environ["quote_key"]
 api_key = os.environ["api_key"]
 api_secret = os.environ["api_secret"]
 access_token = os.environ["access_token"]
 access_token_secret = os.environ["access_token_secret"]
 bearer_token = os.environ["bearer_token"]
+
 # Initialize API clients
 unsplash_access_key = os.environ["unsplash_access_key"]
 print(f"unsplash key: {unsplash_access_key}")
@@ -36,18 +38,36 @@ response.raise_for_status()
 unsplash_data = response.json()
 unsplash_image_url = unsplash_data['urls']['regular']
 
-try:
     # Download image from Unsplash
     image_response = requests.get(unsplash_image_url)
     with open('unsplash_image.jpg', 'wb') as f:
         f.write(image_response.content)
-    # Upload media file
-    media = api.media_upload('unsplash_image.jpg')
+        
+        
+### Quote Generator
 
-    # Create tweet with media
-    tweet = client.create_tweet(
-        media_ids = [media.media_id]
-    )
-    os.remove('unsplash_image.jpg')
-except:
-  print("An exception occurred in unsplash file")
+# Quote Query
+quote_list = ['computers','alone','art','communications','god','history','learning','movies','love','life','knowledge','imagination']
+category = random.choice(quote_list)
+api_url = 'https://api.api-ninjas.com/v1/quotes?category={}'.format(category)
+
+# Quoute Lenght should be less than 100
+while(True):
+  response = requests.get(api_url, headers={'X-Api-Key': quote_key})
+  if response.status_code == requests.codes.ok:
+    data = response.json()  
+    quote = data[0]['quote']  
+    if len(quote) > 100:
+        continue
+    else:
+        # Upload media file to twitter
+        media = api.media_upload('unsplash_image.jpg')
+
+        # Create tweet with media
+        tweet = client.create_tweet(
+        media_ids = [media.media_id],
+        text=quote
+        )
+        break
+  else:
+    print("Error:", response.status_code, response.text)
