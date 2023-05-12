@@ -55,9 +55,13 @@ api_url = 'https://api.api-ninjas.com/v1/quotes?category={}'.format(category)
 while(True):
   response = requests.get(api_url, headers={'X-Api-Key': quote_key})
   if response.status_code == requests.codes.ok:
-    data = response.json()  
-    quote = data[0]['quote']  
-    if len(quote) > 100:
+    data = response.json()
+    try:
+        quote = data[0]['quote']
+    except IndexError:
+        print(data)
+        print("Index out of range error occurred. Please check the data list.") 
+    if len(quote) > 220:
         continue
     else:
         # Upload media file to twitter
