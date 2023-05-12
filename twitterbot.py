@@ -25,7 +25,7 @@ auth = tweepy.OAuth1UserHandler(api_key, api_secret,access_token, access_token_s
 api = tweepy.API(auth)
 
 # Query Selector
-my_list = ['aestheic','travel','greener-cities','people','wallpapers','health','arts-culture','beautiful','spirituality','current-events','abstract','wallart','painting','poetry','3d-renders','street-photography','textures-patterns','textures-patterns','fashion-beauty','qoutes','experimental','art','photography','gore','sweet','architecture-interior','lines','bad','good','horny','tumblr','random','pashtun_girl','kpk','pakistan']
+my_list = ['aestheic','travel','greener-cities','people','wallpapers','health','arts-culture','beautiful','spirituality','current-events','abstract','wallart','painting','poetry','3d-renders','street-photography','textures-patterns','textures-patterns','fashion-beauty','qoutes','experimental','art','photography','gore','sweet','architecture-interior','lines','bad','good','horny','tumblr','random','pakistan']
 random_item = random.choice(my_list)
 print(random_item)
 
