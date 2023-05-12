@@ -64,9 +64,10 @@ while(True):
         media = api.media_upload('unsplash_image.jpg')
 
         # Create tweet with media
+        caption = f"[{random_item}]\n" + quote
         tweet = client.create_tweet(
         media_ids = [media.media_id],
-        text=quote
+        text=caption
         )
         break
   else:
