@@ -1,7 +1,7 @@
 name: run twitterbot.py
 
 
-off:
+on:
   schedule:
     - cron: '*/30 * * * *' # Every 30 Minutes
 
